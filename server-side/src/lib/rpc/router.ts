@@ -1,4 +1,4 @@
-import { contract } from '../both-sides/contract';
+import { contract } from './shared/contract';
 import { implement } from '@orpc/server'
 
 const os = implement(contract)

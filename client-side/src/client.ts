@@ -1,7 +1,7 @@
 import type { ContractRouterClient } from '@orpc/contract'
 import { createORPCClient } from '@orpc/client'
 import { RPCLink } from '@orpc/client/fetch';
-import { contract } from '../both-sides/contract';
+import { contract } from './lib/rpc/shared/contract';
 
 const link = new RPCLink({
     url: 'http://127.0.0.1:3000',
