@@ -1,5 +1,5 @@
 {
-  "name": "APIGenerator",
+  "name": "typescript-orpc-example",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
