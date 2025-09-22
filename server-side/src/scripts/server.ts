@@ -4,7 +4,7 @@ import { CORSPlugin } from '@orpc/server/plugins'
 import { router } from "../lib/rpc/router"
 
 const handler = new RPCHandler(router, {
-    plugins: [new CORSPlugin()]
+    plugins: [new CORSPlugin()],
 })
 
 const server = createServer(async (req, res) => {
@@ -12,6 +12,7 @@ const server = createServer(async (req, res) => {
         context: { headers: req.headers }
     })
 
+    console.log(req);
     if (!result.matched) {
         res.statusCode = 404
         res.end('No procedure matched')
@@ -21,5 +22,5 @@ const server = createServer(async (req, res) => {
 server.listen(
     3000,
     '127.0.0.1',
-    () => console.log('Listening on 127.0.0.1:3000')
+    () => console.log('Listening on 127.0.0.1:3000'),
 )

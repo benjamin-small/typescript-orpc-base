@@ -5,7 +5,7 @@ const os = implement(contract)
 
 export const listPlanet = os.planet.list
     .handler(({ input }) => {
-        return []
+        return [ { id: 123, name: 'Planet X' },  { id: 124, name: 'Planet Y' }]
     })
 
 export const findPlanet = os.planet.find
