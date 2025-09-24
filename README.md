@@ -38,7 +38,7 @@ This example implements a simple Planet API with the following operations:
 
 ### Prerequisites
 
-- Node.js (14.x or higher)
+- Node.js (20.x or higher)
 - pnpm package manager
 
 ### Installation
