@@ -1,12 +1,11 @@
 import {useEffect, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import {client} from './lib/rpc/client';
 import {PlanetSchema} from "./lib/rpc/shared/models/planet"
 import {ArkErrors} from "arktype";
 
 function App() {
+
     const [count, setCount] = useState(0)
     const [planets, setPlanets] = useState<Array<typeof PlanetSchema.infer>>([])
     const [error, setError] = useState<string | null>(null);
@@ -27,23 +26,7 @@ function App() {
 
     return (
         <>
-            <div>
-                <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
+            <h1>Planets in the Dataset</h1>
             {planets.map((v) => {
                 return <div>
                     {v.name}({v.id}) - {v.description}

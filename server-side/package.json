@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "build": "./node_modules/.bin/tsc"
+    "server-dev": "ts-node src/scripts/server.ts"
   },
   "dependencies": {
     "@orpc/client": "^1.8.4",
@@ -15,6 +15,7 @@
     "pnpm": "^10.17.0"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   },
   "private": true
