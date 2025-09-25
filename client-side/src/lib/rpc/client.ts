@@ -4,7 +4,7 @@ import { RPCLink } from '@orpc/client/fetch';
 import { contract } from '../../../../server-side/src/lib/rpc/shared/contract.ts';
 
 const link = new RPCLink({
-    url: 'http://127.0.0.1:3000',
+    url: 'http://0.0.0.0:5173/api',
     headers: { Authorization: 'Bearer token' },
 })
 

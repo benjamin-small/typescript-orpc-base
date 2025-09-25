@@ -7,7 +7,7 @@ export default defineConfig({
     server: {
         proxy: {
             '/api': {
-                target: 'http://localhost:3000', // Replace with your backend server's URL and port
+                target: 'http://server:3000', // Replace with your backend server's URL and port
                 changeOrigin: true, // Needed for virtual hosted sites
                 rewrite: (path) => path.replace(/^\/api/, ''), // Optional: remove '/api' prefix from the forwarded path
                 secure: false, // Optional: for self-signed certificates

@@ -1,0 +1,20 @@
+services:
+  server:
+    build:
+      context: ./server-side # The Dockerfile is in the same directory as this file
+    ports:
+      - "3000:3000" # Map container port 3000 to host port 3000 (replace with your app's port if needed)
+    volumes:
+      - ./server-side:/app # Bind the current directory to the /app directory in the container
+    working_dir: /app
+    command: ["pnpm", "server-dev"] # Run `pnpm server-dev` on container start
+  client:
+    build:
+      context: ./client-side # The Dockerfile is in the same directory as this file
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client-side:/app # Bind the current directory to the /app directory in the container
+      - ./client-side/src/lib/rpc/shared/:/app/src/lib/rpc/shared/
+    working_dir: /app
+    command: ["pnpm", "web-dev"] # Run `pnpm server-dev` on container start
