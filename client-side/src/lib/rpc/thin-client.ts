@@ -1,6 +1,6 @@
 import { createORPCClient } from '@orpc/client'
 import { RPCLink } from '@orpc/client/fetch';
-import { ContractRouterClient } from '@orpc/contract'
+import type { ContractRouterClient } from '@orpc/contract'
 import contract from "./contract.json";
 
 const link = new RPCLink({
