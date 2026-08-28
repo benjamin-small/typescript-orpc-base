@@ -11,4 +11,5 @@ yarn-error.log*
 .vscode/*
 .DS_Store
 package-lock.json
-pnpm-lock.yaml
+coverage/
+dist/

@@ -38,10 +38,44 @@ This example implements a simple Planet API with the following operations:
 
 ### Prerequisites
 
-- Node.js (20.x or higher)
+- Node.js 20.0 or higher
 - pnpm package manager
 
 ### Installation
 
-1. Clone the repository
-2. Install dependencies:
+Install each package from the repository root:
+
+```sh
+pnpm --dir server-side install --frozen-lockfile
+pnpm --dir client-side install --frozen-lockfile
+```
+
+Start both development services with Docker Compose:
+
+```sh
+./make.sh up
+```
+
+Or start a package directly:
+
+```sh
+pnpm --dir server-side run server-dev
+pnpm --dir client-side run web-dev
+```
+
+The example API exposes `list`, `find`, and `create` Planet procedures. See [configuration documentation](docs/configuration.md) for the example ports, links, and placeholder authorization header.
+
+## Testing
+
+Run the server tests/typecheck and client lint/build:
+
+```sh
+pnpm --dir server-side run verify
+pnpm --dir client-side run verify
+```
+
+See [testing documentation](docs/testing.md) for the tested scope, measured coverage, and excluded live integrations.
+
+## Licensing
+
+See [licensing documentation](docs/licensing.md) for the repository's current license status.

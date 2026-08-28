@@ -1,5 +1,5 @@
 {
-  "name": "typescript-orpc-server",
+  "name": "typescript-orpc-client",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -7,7 +7,8 @@
     "web-dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify": "pnpm run lint && pnpm run build"
   },
   "dependencies": {
     "@orpc/client": "^1.8.4",

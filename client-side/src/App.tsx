@@ -6,7 +6,6 @@ import {ArkErrors} from "arktype";
 
 function App() {
 
-    const [count, setCount] = useState(0)
     const [planets, setPlanets] = useState<Array<typeof PlanetSchema.infer>>([])
     const [error, setError] = useState<string | null>(null);
 
@@ -27,8 +26,9 @@ function App() {
     return (
         <>
             <h1>Planets in the Dataset</h1>
+            {error && <p role="alert">{error}</p>}
             {planets.map((v) => {
-                return <div>
+                return <div key={v.id}>
                     {v.name}({v.id}) - {v.description}
                 </div>
             })}
